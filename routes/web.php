@@ -23,6 +23,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/email_verificaiton/send', 'EmailVerificationController@send')->name('email_verification.send');
     
     Route::group(['middleware' => 'email_verified'], function() {
-        
+        Route::get('user_addresses', 'UserAddressesController@index')->name('user_addresses.index');
     });
 });
