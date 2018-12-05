@@ -150,7 +150,10 @@
                     })
                     axios.post('{{ route('orders.store') }}', req)
                         .then(function (respose) {
-                            swal('订单提交成功', '', 'success');
+                            swal('订单提交成功', '', 'success')
+                                .then(() => {
+                                    location.href = '/orders/' + respose.data.id;
+                                });
                         }, function (error) {
                             if (error.response.status == 422) {
                                 //  http 状态吗为422 代表用户输入校验失败
