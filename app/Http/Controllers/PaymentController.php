@@ -41,7 +41,7 @@ class PaymentController extends Controller
     }
 
     // 服务器端回调
-    public function alipayNotify()
+    public function alipayNotify(Request $request)
     {
         // 校验输入参数
         $data = app('alipay')->verify();
