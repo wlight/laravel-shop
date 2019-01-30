@@ -14,6 +14,7 @@ class Handler extends ExceptionHandler
      */
     protected $dontReport = [
         \App\Exceptions\InvalidRequestException::class,
+        \App\Exceptions\CouponCodeUnavailableException::class,
     ];
 
     /**
